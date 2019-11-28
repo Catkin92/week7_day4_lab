@@ -8,6 +8,7 @@
 
 <script>
 import BeerList from './components/BeerList.vue'
+import BeerDetail from './components/BeerDetail.vue'
 
 
 export default {
@@ -18,7 +19,8 @@ export default {
     }
   },
   components: {
-    "beer-list": BeerList
+    "beer-list": BeerList,
+    "beer-detail": BeerDetail
   },
   mounted(){
     fetch("https://api.punkapi.com/v2/beers")
