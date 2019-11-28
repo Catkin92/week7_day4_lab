@@ -1,13 +1,13 @@
 <template lang="html">
-  <div id="beer-detail">
+  <div id="beer-detail" v-if="beer">
     <h1>{{ beer.name }}</h1>
-    <p>{{ beer.tagline }}</p>
-    <p>Description: {{ beer.description }}</p>
-    <img :src="beer.image_url" alt="beer">
+    <p><i>{{ beer.tagline }}</i></p>
+    <p><b>Description:</b> {{ beer.description }}</p>
     <h3>Food Pairings:</h3>
     <ul>
       <li v-for="food in beer.food_pairing">{{ food }}</li>
     </ul>
+    <img :src="beer.image_url" alt="beer">
   </div>
 </template>
 
