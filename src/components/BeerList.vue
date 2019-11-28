@@ -7,9 +7,13 @@
 </template>
 
 <script>
+import ListComponent from './ListComponent.vue';
 export default {
   name: 'beer-list',
-  props: ['beers']
+  props: ['beers'],
+  components: {
+    "list-component": ListComponent
+  }
 }
 </script>
 
