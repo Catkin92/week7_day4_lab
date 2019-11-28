@@ -16,4 +16,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+h1, ul {
+  font-family: monospace;
+  color: aqua;
+}
+ul {
+  font-size: 15px;
+}
 </style>

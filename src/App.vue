@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Beer!</h1>
-    <beer-list :beers="beers"></beer-list>
+    <beer-list :beers="beers" :checked="checked"></beer-list>
     <beer-detail :beer="selectedBeer"></beer-detail>
     <favourite-beer :checked="checked"></favourite-beer>
   </div>
@@ -50,6 +50,25 @@ export default {
 </script>
 
 <style>
+div {
+  background-color: hotpink;
 
+}
+h1 {
+  font-family: monospace;
+}
+h1 {
+   animation-name: flash;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: hotpink;}
+    to {color: black;}
+}
 
 </style>

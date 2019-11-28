@@ -1,9 +1,11 @@
 <template lang="html">
   <div>
 
-    <li v-on:click="handleClick">{{ beer.name }}</li>
-    <label for="checkbox">Add to favourites</label>
-    <input v-on:change="handleChange" type="checkbox" :value="checked">
+    <li v-on:click="handleClick">{{ beer.name }}
+
+    <label v-on:click="handleFavouriteClick" class="fancy-checkbox" :class="isFavouritedHeart()"><font-awesome-icon icon="heart"/>
+    <!-- <input v-on:change="handleChange" type="checkbox" :value="checked"> -->
+    </label></li>
   </div>
 </template>
 
@@ -12,18 +14,23 @@ import FavouriteBeer from './FavouriteBeer.vue'
 import { eventBus } from '../main.js'
 export default {
   name: 'list-component',
-  props: ['beer'],
+  props: ['beer', 'isChecked'],
   data(){
     return {
       checked: [],
     }
   },
   methods: {
+    isFavouritedHeart() {
+      if (this.isChecked) {
+        return 'favourited'
+      }
+    },
     handleClick(){
       eventBus.$emit('beer-selected', this.beer)
 
     },
-    handleChange(){
+    handleFavouriteClick(){
       console.log(this.beer)
       eventBus.$emit('favourite-beers', this.beer)
     }
@@ -32,4 +39,21 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.fancy-checkbox {
+  cursor: pointer;
+}
+
+.fancy-checkbox.favourited {
+  color: dodgerblue;
+}
+
+li{
+    padding: 5px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 15px;
+    color: yellow;
+
+  }
 </style>

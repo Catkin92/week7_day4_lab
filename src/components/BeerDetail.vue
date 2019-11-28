@@ -19,4 +19,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#beer-detail {
+  font-family: monospace;
+  font-size: 15px;
+  color: lime;
+}
 </style>
