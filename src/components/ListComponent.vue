@@ -15,8 +15,8 @@ export default {
   props: ['beer'],
   data(){
     return {
-    checked: []
-  }
+      checked: [],
+    }
   },
   methods: {
     handleClick(){
@@ -24,6 +24,7 @@ export default {
 
     },
     handleChange(){
+      console.log(this.beer)
       eventBus.$emit('favourite-beers', this.beer)
     }
   }

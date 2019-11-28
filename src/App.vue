@@ -34,13 +34,19 @@ export default {
 
     eventBus.$on('beer-selected', (beer) => {
       this.selectedBeer = beer
+    })
 
     eventBus.$on('favourite-beers', (beer) => {
-      this.checked.push(beer)
+      if(!this.checked.includes(beer)){
+      this.checked.push(beer)}
+      else {
+        const foundBeer = this.checked.indexOf(beer)
+        this.checked.splice(foundBeer, 1)
+      }
     })
-    })
+    }
   }
-}
+
 </script>
 
 <style>
